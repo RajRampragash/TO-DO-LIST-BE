@@ -3,7 +3,7 @@ import { task } from "../model/model.js"; // Import the Task model
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/getdata', async (req, res) => {
     try {
         const docs = await task.find();
         res.json(docs);
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/addData', async (req, res) => {
     try {
         const newTaskInstance = new task(req.body);
         const doc = await newTaskInstance.save();

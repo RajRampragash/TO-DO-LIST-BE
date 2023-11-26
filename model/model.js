@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const taskSchema = new Schema({
-    task: {
+    todo: {
         type: String,
         required: true,
     },
-    completed: {
+    isCompleted: {
         type: Boolean,
         default: false,
     },
